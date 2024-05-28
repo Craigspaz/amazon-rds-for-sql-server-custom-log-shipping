@@ -219,7 +219,6 @@ EXECUTE msdb.dbo.rds_drop_database @database_name
 
 ## Limitations
 
-*	**TDE-enabled database** – Amazon RDS for SQL Server supports Transparent Database Encryption (TDE), but as part of the managed service offering, the certificate is managed by AWS. For this reason, a TDE-enabled on-premises database backup can’t be restored on Amazon RDS for SQL Server. You need to remove TDE from the primary SQL Server instance before setting up custom log shipping. Post cutover, you can enable TDE on the secondary SQL Server instance.
 *	**100 databases or less** – Amazon RDS for SQL Server supports 100 databases or less per instance as of this writing. If you have more than 100 databases at the primary, you can set up custom log shipping for the first 100 databases only.
 *	**Multi-AZ setup during custom log shipping** – You can only configure Multi-AZ post cutover because Amazon RDS for SQL Server does not support full restores with NORECOVERY on Multi-AZ instances.
 *	**Host OS** – The custom log shipping solution supports Microsoft Windows Server only as the host operating system for the primary SQL Server instance.
